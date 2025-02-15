@@ -19,9 +19,16 @@ class AuthTests(APITestCase):
 
     def test_register_user(self):
         """Teste para registrar um usuário"""
-        response = self.client.post(self.register_url, self.user_data)
+        new_user_data = {
+            "username": "newuser",
+            "email": "newuser@example.com",
+            "password": "newpassword123"
+        }
+        response = self.client.post(self.register_url, new_user_data)
+        print(response.data)  
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertIn("access", response.data)
+
 
     def test_login_user(self):
         """Teste para login do usuário e obtenção de token"""
