@@ -20,7 +20,6 @@ class RegisterView(APIView):
         },
     )
     def post(self, request):
-        """Registra um novo usuário e retorna tokens JWT"""
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
