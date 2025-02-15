@@ -28,7 +28,7 @@ if TEST_MODE:
 else:
     CORS_ALLOWED_ORIGINS = config(
         "CORS_ALLOWED_ORIGINS",
-        cast=lambda v: [s.strip() for s in v.split(",")],
+        cast=lambda v: [s.strip() for s in v.split(",")] if isinstance(v, str) else v,
         default=[
             "http://localhost:4200",
             "http://127.0.0.1:4200"
