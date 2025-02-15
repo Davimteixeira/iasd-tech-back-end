@@ -15,16 +15,35 @@ SECRET_KEY = config("SECRET_KEY", default="S#perS3crEt_2387")
 
 DEBUG = config("DEBUG", default=True, cast=bool)
 
-ALLOWED_HOSTS = config(
+TEST_MODE = config("TEST_MODE", default=False, cast=bool)
+
+if TEST_MODE:
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:4200",
+        "http://127.0.0.1:4200",
+        "http://0.0.0.0:4200",
+    ]  
+    CORS_ALLOW_ALL_ORIGINS = True  
+    ALLOWED_HOSTS = ["*"]
+else:
+    CORS_ALLOWED_ORIGINS = config(
+        "CORS_ALLOWED_ORIGINS",
+        cast=lambda v: [s.strip() for s in v.split(",")],
+        default=[
+            "http://localhost:4200",
+            "http://127.0.0.1:4200"
+        ],
+    )
+    CORS_ALLOW_ALL_ORIGINS = False  
+
+    ALLOWED_HOSTS = config(
     "ALLOWED_HOSTS",
     cast=lambda v: [s.strip() for s in v.split(",")],
-    default="localhost,0.0.0.0,127.0.0.1",
-)
-
-CSRF_TRUSTED_ORIGINS = config(
-    "CSRF_TRUSTED_ORIGINS",
-    cast=lambda v: [s.strip() for s in v.split(",")],
-    default="http://0.0.0.0,http://localhost,http://127.0.0.1,https://0.0.0.0",
+    default=[
+        "localhost",
+        "127.0.0.1",
+        "0.0.0.0"
+    ],
 )
 
 INSTALLED_APPS = [
@@ -82,6 +101,9 @@ DATABASES = {
         "PASSWORD": config("POSTGRES_PASS"),
         "HOST": config("POSTGRES_HOST"),
         "PORT": config("POSTGRES_PORT"),
+        "TEST": {
+            'NAME': 'banco_de_testes_iasd',  
+        },
     },
 }
 
