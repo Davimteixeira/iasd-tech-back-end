@@ -1,8 +1,8 @@
-# 📌 PROCESSO SELETIVO IATEC - Desafio: Sistema de Cadastro, Login e Produtos
+# 💌 PROCESSO SELETIVO IATEC - Desafio: Sistema de Cadastro, Login e Produtos
 
 ## 🚀 Backend
 
-**Tecnologias Utilizadas:**
+### ✨ **Tecnologias Utilizadas:**
 
 - Python 3.13.1
 - Django + Django REST Framework (DRF) + PostgreSQL
@@ -12,7 +12,9 @@
 - Banco de Dados: PostgreSQL
 - Documentação da API: Swagger
 
-## 📜 Arquivo .env (exemplo)
+---
+
+## 📄 **Arquivo .env (Exemplo)**
 
 ```env
 # Chave secreta (deve ser alterada em produção para uma chave única e segura)
@@ -20,6 +22,9 @@ SECRET_KEY=""
 
 # Configuração de Debug (True para desenvolvimento, False para produção)
 DEBUG=
+
+# Modo de Teste "True para ativar o CORS livre para qualquer rota (APENAS TESTE recomendado deixar False) "
+TEST_MODE=
 
 # Hosts permitidos (separados por vírgula)
 ALLOWED_HOSTS=
@@ -39,16 +44,18 @@ DJANGO_SETTINGS_MODULE=core.settings
 CORS_ORIGIN_ALLOW_ALL=True
 ```
 
-## 📌 Passo a Passo de Instalação
+---
 
-### 1️⃣ Clonar o Repositório
+## 📅 **Passo a Passo de Instalação**
+
+### 1️⃣ **Clonar o Repositório**
 
 ```sh
 $ git clone https://github.com/Davimteixeira/iasd-tech-back-end
 $ cd iasd-tech-back-end
 ```
 
-### 2️⃣ Criar e Ativar um Ambiente Virtual
+### 2️⃣ **Criar e Ativar um Ambiente Virtual**
 
 ```sh
 # Criar ambiente virtual
@@ -61,25 +68,25 @@ $ venv\Scripts\activate
 $ source venv/bin/activate
 ```
 
-### 3️⃣ Instalar Dependências
+### 3️⃣ **Instalar Dependências**
 
 ```sh
 $ pip install -r requirements.txt
 ```
 
-### 4️⃣ Rodar Migrações do Banco de Dados
+### 4️⃣ **Rodar Migrações do Banco de Dados**
 
 ```sh
 $ python manage.py migrate
 ```
 
-### 5️⃣ Criar Superusuário
+### 5️⃣ **Criar Superusuário**
 
 ```sh
 $ python manage.py createsuperuser
 ```
 
-### 6️⃣ Rodar o Servidor
+### 6️⃣ **Rodar o Servidor**
 
 ```sh
 $ python manage.py runserver
@@ -87,7 +94,43 @@ $ python manage.py runserver
 
 A API estará disponível em `http://127.0.0.1:8000/`.
 
-## 📌 Endpoints da API Django
+---
+
+## 🔄 **Rodando os Testes**
+
+### 📊 **Executar Todos os Testes**
+
+Para rodar todos os testes do projeto, execute:
+
+```sh
+$ python manage.py test
+```
+
+### 🔍 **Executar Testes de um Aplicativo Específico**
+
+Para rodar apenas os testes de um app, use:
+
+```sh
+$ python manage.py test nome_do_app
+```
+
+Por exemplo, para testar apenas o app `products`:
+
+```sh
+$ python manage.py test apps.products
+```
+
+### 🏋️ **Evitar Recriação do Banco de Testes**
+
+Para rodar os testes sem recriar o banco de testes a cada execução, utilize:
+
+```sh
+$ python manage.py test --keepdb
+```
+
+---
+
+## 📚 **Endpoints da API Django**
 
 | Método | Rota             | Descrição                  |
 | ------ | ---------------- | -------------------------- |
@@ -97,16 +140,21 @@ A API estará disponível em `http://127.0.0.1:8000/`.
 | POST   | /api/products/   | Criar novo produto         |
 | GET    | /api/categories/ | Listar categorias          |
 
-## 📖 Documentação da API
+---
+
+## 📖 **Documentação da API**
 
 A documentação da API está disponível via **Swagger**.
 Para acessar, execute o projeto e abra no navegador:
 
 ```
-http://127.0.0.1:8000/swagger/
+# A documentação está na rota principal
+http://127.0.0.1:8000/
 ```
 
-## 📜 Dependências e Justificativas
+---
+
+## 🛠️ **Dependências e Justificativas**
 
 ```txt
 asgiref==3.8.1                  # Suporte para ASGI (necessário para Django)
