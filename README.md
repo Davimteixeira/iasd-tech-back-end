@@ -23,7 +23,7 @@ SECRET_KEY=""
 # Configuração de Debug (True para desenvolvimento, False para produção)
 DEBUG=
 
-# Modo de Teste "True para ativar o CORS livre para qualquer rota (APENAS TESTE recomendado deixar False) "
+# Modo de Teste (True para ativar acesso [*] ao CORS "não recomendado")
 TEST_MODE=
 
 # Hosts permitidos (separados por vírgula)
@@ -157,21 +157,26 @@ http://127.0.0.1:8000/
 ## 🛠️ **Dependências e Justificativas**
 
 ```txt
-asgiref==3.8.1                  # Suporte para ASGI (necessário para Django)
-certifi==2025.1.31              # Certificados SSL/TLS confiáveis para requisições HTTP seguras
-charset-normalizer==3.4.1       # Normalização de encoding de caracteres em requisições
-python-decouple==3.8            # Gerenciamento de variáveis de ambiente (utilizado no .env)
-Django==5.1.6                   # Framework principal para desenvolvimento web
-Django REST Framework==3.15.2   # Framework para construção de APIs REST
-Django REST Framework SimpleJWT==5.4.0  # Autenticação baseada em JWT
-idna==3.10                      # Suporte a internacionalização de domínios e URLs
-psycopg2==2.9.10 (Windows)      # Driver PostgreSQL para Django no Windows
-psycopg2-binary==2.9.10 (Linux/Mac)  # Driver PostgreSQL para Django no Linux/Mac
-PyJWT==2.10.1                   # Manipulação de tokens JWT
-requests==2.32.3                # Biblioteca para fazer requisições HTTP
-sqlparse==0.5.3                 # Analisador SQL para Django ORM
-urllib3==2.3.0                   # Gerenciador de conexões HTTP
-Django CORS Headers==4.6.0      # Suporte para CORS em Django
-Django Dotenv==1.4.2            # Carregamento de variáveis de ambiente em Django
-Django Guardian==2.4.0          # Controle de permissões baseadas em objetos
+asgiref==3.8.1 - Suporte para ASGI, necessário para Django async.
+certifi==2025.1.31 - Certificados SSL/TLS confiáveis para requisições HTTP seguras.
+charset-normalizer==3.4.1 - Normalização de encoding de caracteres.
+Django==5.1.6 - Framework principal para desenvolvimento web.
+django-cors-headers==4.6.0 - Habilita CORS para permitir acessos externos.
+django-dotenv==1.4.2 - Carregamento de variáveis de ambiente.
+django-guardian==2.4.0 - Controle de permissões baseadas em objetos.
+djangorestframework==3.15.2 - Framework para criação de APIs REST.
+djangorestframework_simplejwt==5.4.0 - Autenticação baseada em JWT.
+drf-yasg==1.21.8 - Geração automática de documentação Swagger.
+idna==3.10 - Suporte a domínios internacionalizados.
+inflection==0.5.1 - Conversão entre singular/plural e outras inflexões.
+packaging==24.2 - Gerenciamento de versões e dependências.
+psycopg2/psycopg2-binary - Driver para conexão com PostgreSQL.
+PyJWT==2.10.1 - Manipulação de tokens JWT.
+python-decouple==3.8 - Gerenciamento de variáveis de ambiente.
+pytz==2025.1 - Suporte a fuso horário.
+PyYAML==6.0.2 - Manipulação de arquivos YAML.
+requests==2.32.3 - Biblioteca para requisições HTTP.
+sqlparse==0.5.3 - Analisador SQL para Django ORM.
+uritemplate==4.1.1 - Manipulação de templates de URI.
+urllib3==2.3.0 - Gerenciador de conexões HTTP.
 ```
