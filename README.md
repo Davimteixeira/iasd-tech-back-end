@@ -1,4 +1,4 @@
-# 💌 Django Iasd Tech - Backend  - Desafio: Sistema de Cadastro, Login e Produtos
+# 💌 Django Iasd Tech - Backend - Desafio: Sistema de Cadastro, Login e Produtos
 
 ## 🚀 Backend
 
@@ -51,7 +51,7 @@ CORS_ORIGIN_ALLOW_ALL=True
 ### 1️⃣ **Clonar o Repositório**
 
 ```sh
-$ git clone https://github.com/Davimteixeira/iasd-tech-back-end
+$ git clone https://github.com/Davimteixeira/iasd-tech-back-end.git
 $ cd iasd-tech-back-end
 ```
 
