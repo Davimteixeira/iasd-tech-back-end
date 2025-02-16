@@ -1,4 +1,4 @@
-# 💌 PROCESSO SELETIVO IATEC - Desafio: Sistema de Cadastro, Login e Produtos
+# 💌 Django Iasd Tech - Backend  - Desafio: Sistema de Cadastro, Login e Produtos
 
 ## 🚀 Backend
 
